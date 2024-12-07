@@ -1,0 +1,100 @@
+{% extends 'navbar/projectnavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbox</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+        .chatbox {
+            width: 300px;
+            height: 400px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #fff;
+            overflow-y: auto;
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+        .input-box {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+        .message {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .user-message {
+            background-color: #daf7dc;
+            text-align: right;
+        }
+        .gpt-message {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+{% block body %}
+    <div class="chatbox" id="chatbox">
+        <!-- Chat messages will be displayed here -->
+    </div>
+    <h1>hi , may i help you</h1>
+    <input type="text" id="userInput" class="input-box" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        function appendMessage(content, className) {
+            const chatbox = document.getElementById('chatbox');
+            const message = document.createElement('div');
+            message.className = 'message ' + className;
+            message.textContent = content;
+            chatbox.appendChild(message);
+            chatbox.scrollTop = chatbox.scrollHeight;  // Auto scroll to the bottom
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById('userInput');
+            const userMessage = userInput.value;
+
+            if (!userMessage.trim()) {
+                return;  // Don't send empty messages
+            }
+
+            // Display the user's message in the chatbox
+            appendMessage(userMessage, 'user-message');
+            userInput.value = '';  // Clear the input box
+
+            // Send the user's message to the Django backend
+            fetch('/chatbot/chat/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: JSON.stringify({message: userMessage})
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.response) {
+                    // Display GPT's response in the chatbox
+                    appendMessage(data.response, 'gpt-message');
+                } else if (data.error) {
+                    appendMessage('Error: ' + data.error, 'gpt-message');
+                }
+            })
+            .catch(error => {
+                appendMessage('Error: ' + error, 'gpt-message');
+            });
+        }
+    </script>
+{% endblock %}
+</body>
+</html>

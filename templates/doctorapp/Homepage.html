@@ -1,0 +1,65 @@
+{% extends 'navbar/Doctornavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+ <div class="hero-section" style="background-image: url('{% static 'images/doctor.webp' %}'); background-size: cover; background-position: center center; height: 800px; width: 1265px;">
+    <h1 style="display: flex;
+      justify-content: center;
+      align-items: center; color: #B7E0FF; justify-content:center; display:flex; padding-top:150px;">WELCOME TO DOCTOR PORTAL</h1>
+</div>
+<!-- <img src="{% static 'images/doctor.webp' %}" width="1600" height="800"  class="img-thumbnail" alt="Health Management System">-->
+
+<br>
+<br>
+<br>
+<!-- Footer -->
+   <footer style="background-color: #001F3F; color: #fff; padding: 20px 0; font-family: Arial, sans-serif; text-align: center;">
+    <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-bottom: 20px;">
+        <div style="width: 18%; margin-bottom: 20px;">
+            <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 5px;">Medical History</h4>
+            <p style="font-size: 12px; line-height: 1.4; margin: 0;">Past,presetn<br>& Suggestions</p>
+        </div>
+        <div style="width: 18%; margin-bottom: 20px;">
+            <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 5px;">Documents</h4>
+            <p style="font-size: 12px; line-height: 1.4; margin: 0;">Tests<br>dates</p>
+        </div>
+        <div style="width: 18%; margin-bottom: 20px;">
+            <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 5px;">Healthcare Web Services</h4>
+            <p style="font-size: 12px; line-height: 1.4; margin: 0;">Scalable Cloud<br>Computing Services</p>
+        </div>
+        <div style="width: 18%; margin-bottom: 20px;">
+            <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 5px;">Healthcare Support</h4>
+            <p style="font-size: 12px; line-height: 1.4; margin: 0;">Everything For<br>Your Health</p>
+        </div>
+        <div style="width: 18%; margin-bottom: 20px;">
+            <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 5px;">Dietary</h4>
+            <p style="font-size: 12px; line-height: 1.4; margin: 0;">Download<br>Diet sheet</p>
+        </div>
+        <div style="width: 18%; margin-bottom: 20px;">
+            <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 5px;">Paitent support</h4>
+            <p style="font-size: 12px; line-height: 1.4; margin: 0;">24/7 open<br>With each requirement</p>
+        </div>
+        <div style="width: 18%; margin-bottom: 20px;">
+            <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 5px;">chatbox</h4>
+            <p style="font-size: 12px; line-height: 1.4; margin: 0;">help, Ai<br>& Guidelines</p>
+        </div>
+        <div style="width: 18%; margin-bottom: 20px;">
+            <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 5px;">Healthcare benifits</h4>
+            <p style="font-size: 12px; line-height: 1.4; margin: 0;">500 doctor consultants, fast result<br>accurate results</p>
+        </div>
+    </div>
+    <div style="border-top: 1px solid #333; padding-top: 10px; font-size: 12px;">
+        <a href="#" style="color: #ddd; text-decoration: none; margin: 0 10px;">Conditions of Use & Sale</a> |
+        <a href="#" style="color: #ddd; text-decoration: none; margin: 0 10px;">Privacy Notice</a> |
+        <a href="#" style="color: #ddd; text-decoration: none; margin: 0 10px;">Interest-Based Ads</a>
+        <p style="margin: 10px 0 0;">© 2020-2024, Healthex.com, Inc. or its affiliates</p>
+    </div>
+</footer>
+{% endblock %}
+</body>
+</html>
