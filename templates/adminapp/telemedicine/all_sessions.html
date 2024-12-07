@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Telemedicine Sessions</title>
+</head>
+<body>
+    <h2>All Telemedicine Sessions</h2>
+    <ul>
+        {% for session in sessions %}
+            <li>
+                <strong>Patient:</strong> {{ session.patient.username }} <br>
+                <strong>Doctor:</strong> {{ session.doctor.username }} <br>
+                <strong>Time:</strong> {{ session.scheduled_time }} <br>
+                <strong>Session Link:</strong> <a href="{{ session.session_link }}">{{ session.session_link }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

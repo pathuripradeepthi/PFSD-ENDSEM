@@ -1,0 +1,33 @@
+{% extends 'navbar/Usernavbar.html' %}
+{% load static %}
+
+{% block body %}
+<div style="font-family: Arial, sans-serif; margin: 20px;">
+    <h1 style="font-size: 24px; color: #333;">Appointment Details</h1>
+
+    <table style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 1px solid #ccc;">
+        <thead>
+            <tr>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ccc; background-color: #f4f4f4;">Username</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ccc; background-color: #f4f4f4;">Appointment Date</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ccc; background-color: #f4f4f4;">First Name</th>
+                <th style="padding: 10px; text-align: left; border: 1px solid #ccc; background-color: #f4f4f4;">Symptoms</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for appointment in appointments %}
+            <tr>
+                <td style="padding: 10px; text-align: left; border: 1px solid #ccc;">{{ appointment.username }}</td>
+                <td style="padding: 10px; text-align: left; border: 1px solid #ccc;">{{ appointment.date }}</td>
+                <td style="padding: 10px; text-align: left; border: 1px solid #ccc;">{{ appointment.first_name }}</td>
+                <td style="padding: 10px; text-align: left; border: 1px solid #ccc;">{{ appointment.symptoms }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" style="padding: 10px; text-align: center; border: 1px solid #ccc;">No appointments found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

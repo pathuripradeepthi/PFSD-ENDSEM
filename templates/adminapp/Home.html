@@ -1,0 +1,226 @@
+{% extends 'navbar/projectnavbar.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Light background for contrast */
+        }
+
+        .hero-section {
+            background-color: #3A6D8C; /* Dark teal background */
+            color: white;
+            text-align: center;
+            padding: 60px 20px; /* Padding for spacing */
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-section img {
+            width: 100%; /* Make the image responsive */
+            height: auto;
+            margin-bottom: 20px; /* Spacing below the image */
+        }
+
+        .about-section {
+            padding: 40px 0;
+        }
+
+        .about-section h2 {
+            margin-bottom: 30px;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            text-align: justify;
+        }
+
+        .service-section {
+            padding: 40px 0;
+            background-color: #e9ecef; /* Light gray background for the services section */
+        }
+
+        .service-section h2 {
+            margin-bottom: 30px;
+        }
+
+        .service-item {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .service-item img {
+            width: 80%; /* Adjust the image size */
+            height: auto;
+            margin-top: 10px; /* Space above the image */
+            border-radius: 10px; /* Rounded corners for images */
+        }
+
+        .contact-section {
+            padding: 40px 0;
+        }
+
+        .footer {
+            background-color: #343a40; /* Dark background for footer */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .rounded {
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+{% block body %}
+    <!-- Hero Section -->
+    <div class="hero-section">
+<!--        <h1 style="display: flex;-->
+<!--      justify-content: center;-->
+<!--      align-items: center;">WELCOME TO HEALTHEX </h1>-->
+<!--        <h5>IMPROVING HEALTHCARE WITH TECHNOLOGY</h5>-->
+        <div class="hero-section" style="background-image: url('{% static 'images/backgroung-hms.jpg' %}'); background-size: cover; background-position: center center; height: 800px; width: 1265px;">
+    <h1 style="display: flex;
+      justify-content: center;
+      align-items: center; color: black; justify-content:center; display:flex; padding-top:150px;">WELCOME TO HEALTHEX</h1>
+</div>
+<!--        <img src="{% static 'images/hospital-management-system-1.jpg' %}" width="1600" height="800"  class="img-thumbnail" alt="Health Management System">-->
+        <a href="#about" class="btn btn-light btn-lg"><h2>Learn More</h2></a>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="container about-section">
+        <h2 class="text-center my-4">ABOUT</h2>
+        <div class="row">
+            <div class="col-12">
+                <p class="lead text-justify">
+                    A Health Management System (HMS) is an integrated software solution designed to streamline and automate various administrative, clinical, and financial tasks in healthcare organizations. HMS systems are widely used in hospitals, clinics, and other healthcare institutions to enhance operational efficiency, improve patient care, and ensure smooth coordination among departments.
+                </p>
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-md-4">
+                <img src="{% static 'images/hms-2.jpeg' %}" class="rounded img-fluid shadow" alt="HMS Image 1">
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'images/hms-3.jpeg' %}" class="rounded img-fluid shadow" alt="HMS Image 2">
+            </div>
+            <div class="col-md-4">
+                <img src="{% static 'images/doc-1.jpeg' %}" class="rounded img-fluid shadow mx-auto d-block" alt="Doctor Image">
+            </div>
+        </div>
+    </div>
+   <br>
+<br>
+    <!-- Services Section -->
+    <div id="services" class="container service-section">
+        <h2 class="text-center">Our Services</h2>
+        <br>
+        <div class="row">
+            <div class="col-md-4 service-item">
+                <h4>Appointment Scheduling</h4>
+                <img src="{% static 'images/apoointment.jpg' %}" alt="Appointment Scheduling" class="img-fluid">
+                <p>Streamline your appointment booking process with ease.</p>
+            </div>
+            <div class="col-md-4 service-item">
+                <h4>Medical Records</h4>
+                <img src="{% static 'images/medical records.jpg' %}" width="500" height="50" alt="Medical Records" class="img-fluid">
+                <p>Access patient records securely and instantly.</p>
+            </div>
+            <div class="col-md-4 service-item">
+                <h4>Patient Support</h4>
+                <img src="{% static 'images/paitent support.jpg' %}" alt="Patient Support"  class="img-fluid">
+                <p>Provide assistance to your patients through real-time chat support.</p>
+            </div>
+        </div>
+    </div>
+  <br>
+  <br>
+
+    <!-- Contact Form -->
+    <div id="contact" class="container contact-section">
+        <h2 class="text-center">Contact Us</h2>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="3" placeholder="Your message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </div>
+<br>
+<br>
+<br>
+    <!-- Footer -->
+   <footer style="background-color: #001F3F; color: #fff; padding: 20px 0; font-family: Arial, sans-serif; text-align: center;">
+    <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-bottom: 20px;">
+        <div style="width: 18%; margin-bottom: 20px;">
+            <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 5px;">Medical History</h4>
+            <p style="font-size: 12px; line-height: 1.4; margin: 0;">Past,presetn<br>& Suggestions</p>
+        </div>
+        <div style="width: 18%; margin-bottom: 20px;">
+            <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 5px;">Documents</h4>
+            <p style="font-size: 12px; line-height: 1.4; margin: 0;">Tests<br>dates</p>
+        </div>
+        <div style="width: 18%; margin-bottom: 20px;">
+            <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 5px;">Healthcare Web Services</h4>
+            <p style="font-size: 12px; line-height: 1.4; margin: 0;">Scalable Cloud<br>Computing Services</p>
+        </div>
+        <div style="width: 18%; margin-bottom: 20px;">
+            <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 5px;">Healthcare Support</h4>
+            <p style="font-size: 12px; line-height: 1.4; margin: 0;">Everything For<br>Your Health</p>
+        </div>
+        <div style="width: 18%; margin-bottom: 20px;">
+            <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 5px;">Dietary</h4>
+            <p style="font-size: 12px; line-height: 1.4; margin: 0;">Download<br>Diet sheet</p>
+        </div>
+        <div style="width: 18%; margin-bottom: 20px;">
+            <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 5px;">Paitent support</h4>
+            <p style="font-size: 12px; line-height: 1.4; margin: 0;">24/7 open<br>With each requirement</p>
+        </div>
+        <div style="width: 18%; margin-bottom: 20px;">
+            <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 5px;">chatbox</h4>
+            <p style="font-size: 12px; line-height: 1.4; margin: 0;">help, Ai<br>& Guidelines</p>
+        </div>
+        <div style="width: 18%; margin-bottom: 20px;">
+            <h4 style="font-size: 14px; font-weight: bold; margin-bottom: 5px;">Healthcare benifits</h4>
+            <p style="font-size: 12px; line-height: 1.4; margin: 0;">500 doctor consultants, fast result<br>accurate results</p>
+        </div>
+    </div>
+    <div style="border-top: 1px solid #333; padding-top: 10px; font-size: 12px;">
+        <a href="#" style="color: #ddd; text-decoration: none; margin: 0 10px;">Conditions of Use & Sale</a> |
+        <a href="#" style="color: #ddd; text-decoration: none; margin: 0 10px;">Privacy Notice</a> |
+        <a href="#" style="color: #ddd; text-decoration: none; margin: 0 10px;">Interest-Based Ads</a>
+        <p style="margin: 10px 0 0;">© 2020-2024, Healthex.com, Inc. or its affiliates</p>
+    </div>
+</footer>
+
+{% endblock %}
+</body>
+</html>
